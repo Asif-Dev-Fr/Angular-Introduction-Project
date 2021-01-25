@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from '../course';
+import { COURSES } from '../mock-courses';
 
 @Component({
   selector: 'app-courses',
@@ -8,14 +9,16 @@ import { Course } from '../course';
 })
 export class CoursesComponent implements OnInit {
 
-  course: Course= {
-    id: 1,
-    name: "Angular"
-  }
+  courses = COURSES;
+  selectedCourse: Course;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSelect(course: Course):void{
+    this.selectedCourse = course
   }
 
 }
