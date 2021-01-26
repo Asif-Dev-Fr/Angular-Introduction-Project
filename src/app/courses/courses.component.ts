@@ -15,7 +15,8 @@ export class CoursesComponent implements OnInit {
 
   constructor(private CourseService: CourseService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getCourses();
   }
 
   onSelect(course: Course):void{
@@ -23,7 +24,7 @@ export class CoursesComponent implements OnInit {
   }
 
   getCourses(): void {
-    this.CourseService.getCourses().subscribe(courses => this.courses)
+    this.CourseService.getCourses().subscribe(courses=>this.courses=courses)
   }
 
 }
